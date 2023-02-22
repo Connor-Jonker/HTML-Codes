@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul, #myUL {
+  list-style-type: circle;
+}
+#myUL {
+  margin: 0;
+}
+  padding: 0;
+ caret {
+  cursor: pointer;
+  user-select: none;
+}
+.caret::before {
+  content: "\25BA";
+  color: black;
+  display: inline-block;
+  margin-right: 5px;
+}
+.caret-down::before {
+  transform: rotate(90deg);  
+}
+.nested {
+  display: none;
+}
+.active {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<h2>Lab 4 Collapsible Tree 1</h2>
+<p>Connor Jonker #100374615.</p>
+<p>Click on the arrow(s) to open or close the tree branches.</p>
+<p>You can also click the links to see more info on the ships</p>
+
+<ul id="myUL">
+<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/">WarShips of the Royal Canadian Navy During WW2</a/></span>
+	<ul class="nested">
+	<li><span class="caret">Escort Carriers</span>
+		<ul class="nested">
+			<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/escar/">Ameer Class</a></span>
+			<ul class="nested">
+				<li>HMS Nabob</li>
+				<li>HMS Puncher</li>
+				</ul>
+			</ul>
+		<li><span class="caret">Light cruisers</span>
+		<ul class="nested">
+		<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/cruisers/">Ceylon Class</a></span>
+			<ul class="nested">
+				<li>HMCS Quebec</li>
+				</ul>
+			<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/cruisers/">Swiftsure Class</a></span>
+				<ul class="nested">
+				<li>HMCS Ontario</li>
+			</ul>
+		</ul>
+		<li><span class="caret">Destroyers</span>
+		<ul class="nested">
+			<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/riverdes/">A Class</a></span>
+			<ul class="nested">
+				<li>HMCS Saguenay</li>
+				<li>HMCS Skeena</li>
+				</ul>
+				<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/riverdes/">C Class</a></span>
+			<ul class="nested">
+				<li>HMCS Assiniboine</li>
+				<li>HMCS Fraser</li>
+				<li>HMCS Ottawa</li>
+				<li>HMCS Restigouche</li>
+				<li>HMCS St. Laurent</li>
+				</ul>
+				<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/riverdes/">Cr Class</a></span>
+			<ul class="nested">
+				<li>HMCS Crescent</li>
+				<li>HMCS Crusader</li>
+				</ul>
+				<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/riverdes/">D Class</a></span>
+			<ul class="nested">
+				<li>HMCS Kootenay</li>
+				<li>HMCS Margaree</li>
+				</ul>
+				<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/riverdes/">E Class</a></span>
+			<ul class="nested">
+				<li>HMCS Gatineau</li>
+				</ul>
+				<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/riverdes/">F Class</a></span>
+			<ul class="nested">
+				<li>HMCS Qu'Appelle</li>
+				<li>HMCS Saskatchewan</li>
+				</ul>
+				<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/riverdes/">G Class</a></span>
+			<ul class="nested">
+				<li>HMCS Ottawa</li>
+				</ul>
+				<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/riverdes/">H Class</a></span>
+			<ul class="nested">
+				<li>HMCS Chaudière</li>
+				</ul>
+				<li><span class="caret"><a href="http://www.hazegray.org/navhist/canada/postwar/tribww2/">Tribal Class</a></span>
+			<ul class="nested">
+				<li>HMCS Athabaskan</li>
+				<li>HMS Puncher</li>
+				<li>HMCS Athabaskan</li>
+				<li>HMCS Cayuga</li>
+				<li>HMCS Haida</li>
+				<li>HMCS Huron</li>
+				<li>HMCS Iroquois </li>
+				<li>HMCS Micmac</li>
+				<li>HMCS Nootka</li>
+				</ul>
+				<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/v/">V Class</a></span>
+			<ul class="nested">
+				<li>HMCS Algonquin</li>
+				<li>HMCS Sioux</li>
+				</ul>
+				<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/town/">Town Class</a></span>
+			<ul class="nested">
+				<li>HMS Caldwell</li>
+				<li>HMS Chelsea</li>
+				<li>HMS Georgetown</li>
+				<li>HMCS Hamilton</li>
+				<li>HMS Leamington</li>
+				<li>HMS Mansfield</li>
+				<li>HMS Montgomery</li>
+				<li>HMS Richmond</li>
+				<li>HMS Roxborough</li>
+				<li>HMS Salisbury</li>
+				</ul>
+			</ul>
+		<li><span class="caret">Frigates</span>
+		<ul class="nested">
+			<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/riverfri/">River Class</a></span>
+			<ul class="nested">
+				<li>HMCS Annan</li>
+				<li>HMCS Antigonish</li>
+				<li>HMCS Beacon Hill</li>
+				<li>HMCS Buckingham</li>
+				<li>HMCS Cap de la Madeleine</li>
+				<li>HMCS Cape Breton</li>
+				<li>HMCS Capilano</li>
+				<li>HMCS Carlplace</li>
+				<li>HMCS Charlottetown</li>
+				<li>HMCS Chebogue</li>
+				<li>HMCS Coaticook</li>
+				<li>HMCS Eastview</li>
+				<li>HMCS Ettrick</li>
+				<li>HMCS Fort Erie</li>
+				<li>HMCS Glace Bay</li>
+				<li>HMCS Grou</li>
+				<li>HMCS Hallowell</li>
+				<li>HMCS Inch Arran</li>
+				<li>HMCS Joliette</li>
+				<li>HMCS Jonquiere</li>
+				<li>HMCS Kirkland Lake</li>
+				<li>HMCS Kokanee</li>
+				<li>HMCS La Hulloise</li>
+				<li>HMCS Lanark</li>
+				<li>HMCS Lasalle</li>
+				<li>HMCS Lauzon</li>
+				<li>HMCS Levis</li>
+				<li>HMCS Longueuil</li>
+				<li>HMCS Magog</li>
+				<li>HMCS Matane</li>
+				<li>HMCS Meon</li>
+				<li>HMCS Monnow</li>
+				<li>HMCS Montreal</li>
+				<li>HMCS Nene</a></li>
+				<li>HMCS New Glasgow</a></li>
+				<li>HMCS New Waterford</a></li>
+				<li>HMCS Orkney</a></li>
+				<li>HMCS Outremont</a></li>
+				<li>HMCS Penetang</a></li>
+				<li>HMCS Port Colborne</a></li>
+				<li>HMCS Poundmaker</a></li>
+				<li>HMCS Prestonian</a></li>
+				<li>HMCS Prince Rupert</a></li>
+				<li>HMCS Ribble</a></li>
+				<li>HMCS Royal Mount</a></li>
+				<li>HMCS Runnymede</a></li>
+				<li>HMCS Sea Cliff</a></li>
+				<li>HMCS Springhill</a></li>
+				<li>HMCS St.Catharines</a></li>
+				<li>HMCS Saint John</a></li>
+				<li>HMCS St.Pierre</a></li>
+				<li>HMCS St.Stephen</a></li>
+				<li>HMCS Ste.Therese</a></li>
+				<li>HMCS Stettler </a></li>
+				<li>HMCS Stone Town</a></li>
+				<li>HMCS Stormont</a></li>
+				<li>HMCS Strathadam</a></li>
+				<li>HMCS Sussexvale</a></li>
+				<li>HMCS Swansea</a></li>
+				<li>HMCS Teme</a></li>
+				<li>HMCS Thetford Mines</a></li>
+				<li>HMCS Toronto</a></li>
+				<li>HMCS Valleyfield</a></li>
+				<li>HMCS Victoriaville</li>
+				<li>HMCS Waskesiu</li>
+				<li>HMCS Wentworth</li>
+			</ul>
+			<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/loch/">Loch Class</a></span>
+			<ul class="nested">
+				<li>HMCS Loch Achanalt</a></li>
+				<li>HMCS Loch Alvie</a></li>
+				<li>HMCS Loch Morlich</a></li>
+				</ul>
+		</ul>
+		<li><span class="caret">Corvettes</span>
+		<ul class="nested">
+			<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/flower/">Flower Class</a></span>
+			<ul class="nested">
+				<li>HMCS CALGARY</il>
+				<li>HMCS CHARLOTTETOWN</il>
+				<li>HMCS FREDERICTON</il>
+				<li>HMCS HALIFAX</il>
+				<li>HMCS KITCHENER</il>
+				<li>HMCS LA MALBAIE</il>
+				<li>HMCS PORT ARTHUR</il>
+				<li>HMCS REGINA</il>
+				<li>HMCS VILLE DE QUEBEC</il>
+				<li>HMCS WOODSTOCK</il>
+				<li>HMCS ATHOLL</il>
+				<li>HMCS COBOURG</il>
+				<li>HMCS FERGUS</il>
+				<li>HMCS FRONTENAC</il>
+				<li>HMCS GUELPH</il>
+				<li>HMCS HAWKESBURY</il>
+				<li>HMCS LOUISBURG</il>
+				<li>HMCS NORSYD</il>
+				<li>HMCS NORTH BAY</il>
+				<li>HMCS OWEN SOUND</il>
+				<li>HMCS RIVIERE DU LOUP</il>
+				<li>HMCS ST LAMBERT</il>
+				<li>HMCS TRENTONIAN</il>
+				<li>HMCS WHITBY</il>
+				<li>HMCS ASBESTOS</il>
+				<li>HMCS BEAUHARNOIS</il>
+				<li>HMCS BELLEVILLE</il>
+				<li>HMCS PARRY SOUND</il>
+				<li>HMCS PETERBOROUGH</il>
+				<li>HMCS SMITHS FALLS</il>
+				<li>HMCS STELLARTON</il>
+				<li>HMCS STRATHROY</il>
+				<li>HMCS THORLOCK</il>
+				<li>HMCS WEST YORK</il>
+				<li>HMCS FOREST HILL</il>
+				<li>HMCS GIFFARD</il>
+				<li>HMCS LONG BRANCH</il>
+				<li>HMCS MIMICO</il>
+				<li>HMCS </il>
+			</ul>
+				<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/flower/">Revised Flower Class</a></span>
+			<ul class="nested">
+				<li>HMCS AGASSIZ</il>
+				<li>HMCS ALBERNI</il>
+				<li>HMCS ALGOMA</il>
+				<li>HMCS AMHERST</il>
+				<li>HMCS ARROWHEAD</il>
+				<li>HMCS ARVIDA</il>
+				<li>HMCS BADDECK</il>
+				<li>HMCS BARRIE</il>
+				<li>HMCS BATTLEFORD</il>
+				<li>HMCS BITTERSWEET</il>
+				<li>HMCS BRANDON</il>
+				<li>HMCS BUCTOUCHE</il>
+				<li>HMCS CAMROSE</il>
+				<li>HMCS CHAMBLY</il>
+				<li>HMCS CHICOUTIMI</il>
+				<li>HMCS CHILLIWACK</il>
+				<li>HMCS COBALT</il>
+				<li>HMCS COLLINGWOOD</il>
+				<li>HMCS DAUPHIN</il>
+				<li>HMCS DAWSON</il>
+				<li>HMCS DRUMHELLER</il>
+				<li>HMCS DUNVEGAN</il>
+				<li>HMCS EDMUNDSTON</il>
+				<li>HMCS EYEBRIGHT</il>
+				<li>HMCS FENNEL</il>
+				<li>HMCS GALT</il>
+				<li>HMCS HEPATICA</il>
+				<li>HMCS KAMLOOPS</il>
+				<li>HMCS KAMSACK</il>
+				<li>HMCS KENOGAMI</il>
+				<li>HMCS LETHBRIDGE	</il>
+				<li>HMCS LEVIS</il>
+				<li>HMCS LOUISBURG</il>
+				<li>HMCS LUNENBURG</il>
+				<li>HMCS MATAPEDIA</il>
+				<li>HMCS MAYFLOWER</il>
+				<li>HMCS MONCTON</il>
+				<li>HMCS MOOSE JAW</il>
+				<li>HMCS MORDEN</il>
+				<li>HMCS NANAIMO</il>
+				<li>HMCS NAPANEE</il>
+				<li>HMCS OAKVILLE</il>
+				<li>HMCS ORILLIA</il>
+				<li>HMCS PICTOU</il>
+				<li>HMCS PRESCOTT</il>
+				<li>HMCS QUESNEL</il>
+				<li>HMCS RIMOUSKI</il>
+				<li>HMCS ROSTHERN</il>
+				<li>HMCS SACKVILLE</il>
+				<li>HMCS SASKATOON</il>
+				<li>HMCS SHAWINIGAN</il>
+				<li>HMCS SHEDIAC</il>
+				<li>HMCS SHERBROOKE</il>
+				<li>HMCS SNOWBERRY</il>
+				<li>HMCS SOREL</il>
+				<li>HMCS SPIKENARD</il>
+				<li>HMCS SUDBURY</il>
+				<li>HMCS SUMMERSIDE</il>
+				<li>HMCS THE PAS</il>
+				<li>HMCS TRAIL</il>
+				<li>HMCS TRILLIUM</il>
+				<li>HMCS WETASKIWIN</il>
+				<li>HMCS WEYBURN</il>
+				<li>HMCS WINDFLOWER</il>
+				<li>HMCS BRANTFORD</il>
+				<li>HMCS DUNDAS</il>
+				<li>HMCS MIDLAND</il>
+				<li>HMCS NEW WESTMINSTER</il>
+				<li>HMCS TIMMINS</il>
+				<li>HMCS VANCOUVER</il>
+			</ul>
+			<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/castle/">Castle Class</a></span>
+			<ul class="nested">
+				<li>HMCS ARNPRIOR</li>
+				<li>HMCS BOWMANVILLE</li>
+				<li>HMCS COPPER CLIFF</li>
+				<li>HMCS HESPELER</li>
+				<li>HMCS HUMBERSTONE</li>
+				<li>HMCS HUNTSVILLE</li>
+				<li>HMCS KINCARDINE</li>
+				<li>HMCS LEASIDE</li>
+				<li>HMCS ORANGEVILLE</li>
+				<li>HMCS PETROLIA</li>
+				<li>HMCS ST THOMAS</li>
+				<li>HMCS TILLSONBURG</li>
+				</ul>
+				<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/westisle/">Western Isles Class</a></span>
+			<ul class="nested">
+				<li>HMCS ANTICOSTI</li>
+				<li>HMCS BAFFIN</li>
+				<li>HMCS CAILIFF</li>
+				<li>HMCS IRONBOUND</li>
+				<li>HMCS LISCOMB</li>
+				<li>HMCS MAGDALEN</li>
+				<li>HMCS MANITOULIN</li>
+				<li>HMCS MISCOU</li>
+				</ul>
+		</ul>
+			<li><span class="caret">Convoy Escort</span>
+			<ul class="nested">
+			<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/algerine/">Algerine Class</a></span>
+			<ul class="nested">
+				<li>HMCS BORDER CITIES</li>
+				<li>HMCS FORT FRANCES</li>
+				<li>HMCS KAPUSKASING</li>
+				<li>HMCS MIDDLESEX</li>
+				<li>HMCS NEW LISKEARD</li>
+				<li>HMCS OSHAWA</li>
+				<li>HMCS PORTAGE</li>
+				<li>HMCS ROCKLIFFE</li>
+				<li>HMCS SAULT STE MARIE</li>
+				<li>HMCS ST BONIFACE</li>
+				<li>HMCS WALLACEBURG</li>
+				<li>HMCS WINNIPEG</li>
+			</ul>
+			<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/bangor/">Bangor Class</a></span>
+			<ul class="nested">
+				<li>HMCS BELLECHASSE</li>
+				<li>HMCS BURLINGTON</li>
+				<li>HMCS CHEDABUCTO</li>
+				<li>HMCS CHIGNECTO</li>
+				<li>HMCS CLAYQUOT</li>
+				<li>HMCS COWICHAN</li>
+				<li>HMCS GEORGIAN</li>
+				<li>HMCS MAHONE</li>
+				<li>HMCS MALPEQUE</li>
+				<li>HMCS MALPEQUE</li>
+				<li>HMCS MINAS</li>
+				<li>HMCS MIRAMICHI</li>
+				<li>HMCS NIPIGON</li>
+				<li>HMCS OUTARDE</li>
+				<li>HMCS QUATSINO</li>
+				<li>HMCS QUINTE</li>
+				<li>HMCS THUNDER</li>
+				<li>HMCS UNGAVA</li>
+				<li>HMCS WASAGA</li>
+				<li>HMCS BAYFIELD</li>
+				<li>HMCS CANSO</li>
+				<li>HMCS CARAQUET</li>
+				<li>HMCS GUYSBOROUGH</li>
+				<li>HMCS INGONISH</li>
+				<li>HMCS LOCKEPORT</li>
+				<li>HMCS COURTENAY</li>
+				<li>HMCS DRUMMONDVILLE</li>
+				<li>HMCS GANANOQUE</li>
+				<li>HMCS GODERICH</li>
+				<li>HMCS GRANDMERE</li>
+				<li>HMCS KELOWNA</li>
+				<li>HMCS MEDICINE HAT</li>
+				<li>HMCS RED DEER</li>
+				<li>HMCS SWIFT CURRENT</li>
+				<li>HMCS VEGREVILLE</li>
+				<li>HMCS BROCKVILLE</li>
+				<li>HMCS DIGBY</li>
+				<li>HMCS ESQUIMALT</li>
+				<li>HMCS GRANBY</li>
+				<li>HMCS LACHINE</li>
+				<li>HMCS MELVILLE</li>
+				<li>HMCS NORANDA</li>
+				<li>HMCS TRANSCONA</li>
+				<li>HMCS TROIS-RIVIERES</li>
+				<li>HMCS TRURO</li>
+				<li>HMCS BLAIRMORE</li>
+				<li>HMCS FORT WILLIAM</li>
+				<li>HMCS KENORA</li>
+				<li>HMCS KENTVILLE</li>
+				<li>HMCS MILLTOWN</li>
+				<li>HMCS MULGRAVE</li>
+				<li>HMCS PORT HOPE</li>
+				<li>HMCS SARNIA</li>
+				<li>HMCS STRATFORD</li>
+				<li>HMCS WESTMOUNT</li>
+			</ul>
+		</ul>
+		<li><span class="caret">Minesweepers</span>
+		<ul class="nested">
+			<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/fundy/">Fundy Class</a></span>
+			<ul class="nested">
+				<li>HMCS COMOX</li>
+				<li>HMCS FUNDY</li>
+				<li>HMCS GASPE</li>
+				<li>HMCS NOOTKA</li>
+			</ul>
+			<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/llewelln/">Llewellyn Class</a></span>
+			<ul class="nested">
+				<li>HMCS COQUITLAM</li>
+				<li>HMCS CRANBROOK</li>
+				<li>HMCS DAERWOOD</li>
+				<li>HMCS KALAMALKA</li>
+				<li>HMCS LAVALLEE</li>
+				<li>HMCS LLEWELLYN</li>
+				<li>HMCS LLOYD GEORGE</li>
+				<li>HMCS REVELSTOKE</li>
+				<li>HMCS ROSSLAND</li>
+				<li>HMCS ST JOSEPH</li>
+			</ul>
+			<li><span class="caret"><a href="https://www.hazegray.org/navhist/canada/ww2/lake/">Lake Class</a></span>
+			<ul class="nested">
+				<li>HMCS ALDER LAKE</li>
+				<li>HMCS ASH LAKE</li>
+				<li>HMCS BEECH LAKE</li>
+				<li>HMCS BIRCH LAKE</li>
+				<li>HMCS CEDAR LAKE</li>
+				<li>HMCS CHERRY LAKE</li>
+				<li>HMCS ELM LAKE</li>
+				<li>HMCS FIR LAKE</li>
+				<li>HMCS HICKORY LAKE</li>
+				<li>HMCS LARCH LAKE</li>
+				<li>HMCS MAPLE LAKE</li>
+				<li>HMCS OAK LAKE</li>
+				<li>HMCS PINE LAKE</li>
+				<li>HMCS POPLAR LAKE</li>
+				<li>HMCS SPRUCE LAKE</li>
+				<li>HMCS WILLOW LAKE</li>
+			</ul>
+		</ul>
+
+    </ul>
+  </li>
+</ul>
+
+<script>
+var toggler = document.getElementsByClassName("caret");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("caret-down");
+  });
+}
+</script>
+
+</body>
+</html>

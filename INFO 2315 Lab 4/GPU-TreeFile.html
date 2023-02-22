@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<style>
+.node {
+	cursor: pointer;
+}
+.node circle {
+	fill: black;
+	stroke: steelblue;
+	stroke-width: 1.5px;
+}
+.node text {
+	font: 10px sans-serif;
+}
+.link {
+	fill: none;
+	stroke: #ccc;
+	stroke-width: 1.5px;
+}
+
+body {
+	overflow: hidden;
+}
+</style>
+</head>
+
+<body>
+
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<div id="body"></div>
+
+<script>
+var treeData = [
+{
+	"name": "GPUs", 
+	"parent": "null",
+	"_children": [
+	{
+		"name": "Nvidia",
+		"parent": "Graphics Processing Units",
+		"_children": [
+		{
+			"name": "GeForce 400",
+			"parent": "Nvidia",
+			"_children": [
+			{
+			"name": "GeForce 420",
+			"parent": "GeForce 400",
+			},
+			{
+			"name": "GeForce 430",
+			"parent": "GeForce 400",
+			},
+			{
+			"name": "GeForce 440",
+			"parent": "GeForce 400",
+			},
+			{
+			"name": "GeForce 450",
+			"parent": "GeForce 400",
+			},
+			{
+			"name": "GeForce 470",
+			"parent": "GeForce 400",
+			},
+			{
+			"name": "GeForce 480",
+			"parent": "GeForce 400",
+			}
+			]
+		},
+		{
+			"name": "GeForce 700",
+			"parent": "Nvidia",
+			"_children": [
+			{
+			"name": "GeForce GT 705",
+			"parent": "GeForce 700",
+			},
+			{
+			"name": "GeForce GT 710",
+			"parent": "GeForce 700",
+			},
+			{
+			"name": "GeForce GT 720",
+			"parent": "GeForce 700",
+			},
+			{
+			"name": "GeForce GT 730",
+			"parent": "GeForce 700",
+			},
+			{
+			"name": "GeForce GT 740",
+			"parent": "GeForce 700",
+			},
+			{
+			"name": "GeForce GTX 760",
+			"parent": "GeForce 700",
+			},
+			{
+			"name": "GeForce GTX 770",
+			"parent": "GeForce 700",
+			},
+			{
+			"name": "GeForce GTX 780",
+			"parent": "GeForce 700",
+			}
+			]
+		},
+		{
+			"name": "GeForce 900",
+			"parent": "Nvidia",
+			"_children": [
+			{
+			"name": "GeForce GTX 950",
+			"parent": "GeForce 900",
+			},
+			{
+			"name": "GeForce GTX 960",
+			"parent": "GeForce 900",
+			},
+			{
+			"name": "GeForce GTX 970",
+			"parent": "GeForce 900",
+			},
+			{
+			"name": "GeForce GTX 980",
+			"parent": "GeForce 900",
+			}
+			]
+		},
+		{
+			"name": "GeForce 10",
+			"parent": "Nvidia",
+			"_children": [
+			{
+			"name": "GeForce GT 1010",
+			"parent": "GeForce 10",
+			},
+			{
+			"name": "GeForce GT 1030",
+			"parent": "GeForce 10",
+			},
+			{
+			"name": "GeForce GTX 1050",
+			"parent": "GeForce 10",
+			},
+			{
+			"name": "GeForce GTX 1060",
+			"parent": "GeForce 10",
+			},
+			{
+			"name": "GeForce GTX 1070",
+			"parent": "GeForce 10",
+			},
+			{
+			"name": "GeForce GTX 1080",
+			"parent": "GeForce 10",
+			}
+			]
+		},
+		{
+			"name": "GeForce 20",
+			"parent": "Nvidia",
+			"_children": [
+			{
+			"name": "GeForce RTX 2060",
+			"parent": "GeForce 20",
+			},
+			{
+			"name": "GeForce RTX 2070",
+			"parent": "GeForce 20",
+			},
+			{
+			"name": "GeForce RTX 2080",
+			"parent": "GeForce 20",
+			}
+			]
+		},
+		{
+			"name": "GeForce 30",
+			"parent": "Nvidia",
+			"_children": [
+			{
+			"name": "GeForce RTX 3050",
+			"parent": "GeForce 30",
+			},
+			{
+			"name": "GeForce RTX 3060",
+			"parent": "GeForce 30",
+			},
+			{
+			"name": "GeForce RTX 3070",
+			"parent": "GeForce 30",
+			},
+			{
+			"name": "GeForce RTX 3080",
+			"parent": "GeForce 30",
+			},
+			{
+			"name": "GeForce RTX 3090",
+			"parent": "GeForce 30",
+			}
+			]
+		}
+		]
+	},
+	{
+		"name": "AMD",
+		"parent": "Graphics Processing Units",
+		"_children": [
+		{
+			"name": "Polaris",
+			"parent": "AMD",
+			"_children": [
+			{
+			"name": "Radeon R5 430",
+			"parent": "Polaris",
+			},
+			{
+			"name": "Radeon R5 435",
+			"parent": "Polaris",
+			},
+			{
+			"name": "Radeon R7 430",
+			"parent": "Polaris",
+			},
+			{
+			"name": "Radeon R7 435",
+			"parent": "Polaris",
+			},
+			{
+			"name": "Radeon R7 450",
+			"parent": "Polaris",
+			},
+			{
+			"name": "Radeon RX 455",
+			"parent": "Polaris",
+			},
+			{
+			"name": "Radeon RX 460",
+			"parent": "Polaris",
+			},
+			{
+			"name": "Radeon RX 470D",
+			"parent": "Polaris",
+			},
+			{
+			"name": "Radeon RX 470",
+			"parent": "Polaris",
+			},
+			{
+			"name": "Radeon RX 480",
+			"parent": "Polaris",
+			}
+			]
+		},
+		{
+			"name": "Vega",
+			"parent": "AMD",
+			"_children": [
+			{
+			"name": "Radeon RX Vega 56",
+			"parent": "Vega",
+			},
+			{
+			"name": "Radeon RX Vega 64",
+			"parent": "Vega",
+			},
+			{
+			"name": "Radeon RX Vega 64 Liquid",
+			"parent": "Vega",
+			},
+			{
+			"name": "Radeon VII",
+			"parent": "Vega",
+			},
+			{
+			"name": "Radeon Vega Frontier Edition",
+			"parent": "Vega",
+			}
+			]
+		},
+		{
+			"name": "Navi 1x",
+			"parent": "AMD",
+			"_children": [
+			{
+			"name": "Radeon RX 5300",
+			"parent": "Navi 1x",
+			},
+			{
+			"name": "Radeon RX 5500",
+			"parent": "Navi 1x",
+			},
+			{
+			"name": "Radeon RX 5600",
+			"parent": "Navi 1x",
+			},
+			{
+			"name": "Radeon RX 5700",
+			"parent": "Navi 1x",
+			}
+			]
+		},
+		{
+			"name": "Navi 2x",
+			"parent": "AMD",
+			"_children": [
+			{
+			"name": "Radeon RX 6400",
+			"parent": "Navi 2x",
+			},
+			{
+			"name": "Radeon RX 6600",
+			"parent": "Navi 2x",
+			},
+			{
+			"name": "Radeon RX 6700",
+			"parent": "Navi 2x",
+			},
+			{
+			"name": "Radeon RX 6800",
+			"parent": "Navi 2x",
+			},
+			{
+			"name": "Radeon RX 6900",
+			"parent": "Navi 2x",
+			}
+			]
+		}
+		]
+	},
+	]
+}
+];
+
+
+// ************** Generate the tree diagram	 *****************
+var margin = {top: 20, right: 20, bottom: 20, left: 50},
+	width = 1500 - margin.right - margin.left,
+	height = 750 - margin.top - margin.bottom;
+	
+var i = 0,
+	duration = 750,
+	root;
+
+var tree = d3.layout.tree()
+	.size([height, width]);
+
+var diagonal = d3.svg.diagonal()
+	.projection(function(d) { return [d.y, d.x]; });
+
+var svg = d3.select("body").append("svg")
+	.attr("width", width + margin.right + margin.left)
+	.attr("height", height + margin.top + margin.bottom)
+  .append("g")
+	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+root = treeData[0];
+root.x0 = height / 2;
+root.y0 = 0;
+  
+update(root);
+
+d3.select(self.frameElement).style("height", "500px");
+
+function update(source) {
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root).reverse(),
+	  links = tree.links(nodes);
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+  // Update the nodes…
+  var node = svg.selectAll("g.node")
+	  .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+  // Enter any new nodes at the parent's previous position.
+  var nodeEnter = node.enter().append("g")
+	  .attr("class", "node")
+	  .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+	  .on("click", click);
+
+  nodeEnter.append("circle")
+	  .attr("r", 1e-6)
+	  .style("fill", function(d) { return d._children ? "lightblue" : "#fff"; });
+	  //.style("fill-opacity", .3);
+
+  nodeEnter.append("text")
+	  .attr("x", function(d) { return d.children || d._children ? -13 : 13; })
+	  .attr("dy", ".35em")
+	  .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+	  .text(function(d) { return d.name; })
+	  .style("fill-opacity", 1e-6);
+
+  // Transition nodes to their new position.
+  var nodeUpdate = node.transition()
+	  .duration(duration)
+	  .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+  nodeUpdate.select("circle")
+	  .attr("r", 7)
+	  .style("fill", function(d) { return d._children ? "lightblue" : "#fff"; });
+
+  nodeUpdate.select("text")
+	  .style("fill-opacity", 1);
+
+  // Transition exiting nodes to the parent's new position.
+  var nodeExit = node.exit().transition()
+	  .duration(duration)
+	  .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+	  .remove();
+
+  nodeExit.select("circle")
+	  .attr("r", 1e-6);
+
+  nodeExit.select("text")
+	  .style("fill-opacity", 1e-6);
+
+  // Update the links…
+  var link = svg.selectAll("path.link")
+	  .data(links, function(d) { return d.target.id; });
+
+  // Enter any new links at the parent's previous position.
+  link.enter().insert("path", "g")
+	  .attr("class", "link")
+	  .attr("d", function(d) {
+		var o = {x: source.x0, y: source.y0};
+		return diagonal({source: o, target: o});
+	  });
+
+  // Transition links to their new position.
+  link.transition()
+	  .duration(duration)
+	  .attr("d", diagonal);
+
+  // Transition exiting nodes to the parent's new position.
+  link.exit().transition()
+	  .duration(duration)
+	  .attr("d", function(d) {
+		var o = {x: source.x, y: source.y};
+		return diagonal({source: o, target: o});
+	  })
+	  .remove();
+
+  // Stash the old positions for transition.
+  nodes.forEach(function(d) {
+	d.x0 = d.x;
+	d.y0 = d.y;
+	//d.y0 = d.y+5;
+  });
+}
+
+// Toggle children on click.
+function click(d) {
+  if (d.children) {
+	d._children = d.children;
+	d.children = null;
+  } else {
+	d.children = d._children;
+	d._children = null;
+  }
+  update(d);
+}
+
+</script>
+  </body>
+</html>
+
