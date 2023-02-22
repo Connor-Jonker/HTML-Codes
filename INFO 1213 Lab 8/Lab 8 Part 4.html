@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Lab 8 Part 4</title>
+<meta charset="utf-8">
+<style>
+body { background-color: #333333;
+       color: #eaeaea; }
+#gallery { width: 800px; }
+#gallery ul { width: 300px; 
+              list-style-type: none;
+			  float: left; }
+#gallery li { display: inline; 
+			  float: left;
+			  padding: 16px; }
+#gallery img { border-style: none; }
+figure { padding-top: 30px;
+		 text-align: center; }
+figcaption { font-weight: bold;
+             font-size: 1.5em; }
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('#gallery a').click(function(){
+		var galleryHref = $(this).attr('href');
+		var galleryAlt = $(this).attr('title');
+		$('figure').css('display','none');
+		$('figure img').attr({ src: galleryHref, alt: galleryAlt });
+		$('figcaption').html(galleryAlt);
+		$('figure').fadeToggle(1000);
+		 return false;
+	});
+});
+</script>
+</head>
+<body>
+<h1>Honk?</h1>
+<div id="gallery">
+ <ul>
+   <li>
+     <a href="photo1.png"  title="Agent of Chaos"><img src="photo1.png" width="100" height="75"  alt="Agent of Chaos"></a>
+   </li>
+   <li>
+     <a href="photo2.png" title="Honque"><img src="photo2.png" width="100" height="75" alt="Honque"></a>  
+   </li>
+   <li>
+     <a href="photo3.png" title="Honks"><img src="photo3.png" width="100" height="75" alt="Honks"></a>
+   </li>
+   <li>
+     <a href="photo4.png" title="Royalty"><img src="photo4.png" width="100" height="75" alt="Royalty"></a>
+   </li>
+   <li>
+     <a href="photo1.jpg" title="I wonder who that's for"><img src="photo1.jpg" width="100" height="75" alt="I wonder who that's for"></a>
+  </li>
+  <li>
+    <a href="photo2.jpg" title="Goose"><img src="photo2.jpg" width="100" height="75" alt="Goose"></a>
+  </li>
+ </ul>
+ <figure>
+  <img src="photo1.jpg" width="400" height="300" alt="I wonder who that's for">
+  <figcaption>I wonder who that's for</figcaption>
+ </figure>
+</div>
+
+</body>
+</html>
